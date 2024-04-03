@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background-image: url('/public/images/herobackground.jpg'); */
+  }
+  
+  .progress-bar {
+    background-color: #3498db; 
+    height: 4px; 
+    width: 100%; 
+    transform-origin: left center; 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+  }
+
+ 
+  
