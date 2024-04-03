@@ -3,7 +3,7 @@ import {motion} from 'framer-motion';
 const NAV_MENU = [
   {
     name: "Home",
-    href:''
+    href:'/'
   
   },
   {
@@ -36,7 +36,7 @@ function NavItem({ children, href }: NavItemProps) {
   return (
     <li>
       <a
-     className=" flex items-center gap-2 font-medium text-gray-200 "
+     className=" flex items-center   text-black font-normal text-sm "
        >
         {children}
       </a>
@@ -45,23 +45,14 @@ function NavItem({ children, href }: NavItemProps) {
 }
 
 export function Navbar() {
-  // const [open, setOpen] = React.useState(false);
 
-  // const handleOpen = () => setOpen((cur) => !cur);
-
-  // React.useEffect(() => {
-  //   window.addEventListener(
-  //     "resize",
-  //     () => window.innerWidth >= 960 && setOpen(false)
-  //   );
-  // }, []);
 
   return (
-    <nav  className="  bg-[rgba(5,9,14,0.68)] sticky top-0 ">
+    <nav  className="  bg-white sticky top-0  shadow-inner">
       <div className=" backdrop-blur-2xl w-full">
       <div className="  container px-16  w-full   py-7 mx-auto  flex items-center justify-between">
-        <p  className=" text-blue-400   text-2xl font-bold">
-       Aqu  development
+        <p  className="   text-2xl font-bold">
+      Developer K
         </p>
 
        

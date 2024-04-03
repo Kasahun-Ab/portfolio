@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { motion } from 'framer-motion';
 interface ProjectCardProps {
   img: string;
   title: string;
@@ -8,24 +8,35 @@ interface ProjectCardProps {
 
 export function ProjectCard({ img, title, desc }: ProjectCardProps) {
   return (
-    <div className="  bg-[rgb(44,44,44)] shadow-md    rounded-md   " >
-      <header className=" mt-0 mb-1  max-w-fit  mx-auto min-h-fit" 
+    <div className="  " >
+      <header className=" mt-0 mb-1  max-w-fit  mx-auto min-h-fit overflow-hidden shadow-lg" 
     
       >
-      <Image
-     src={img}
-      alt="Picture of the author"
-      width={400} 
-      height={400} 
-      blurDataURL="data:..." 
-      placeholder="blur" // Optional blur-up while loading
-    />
+      
+     <motion.img  
+
+          
+            src={img}
+            alt="Description of the image"
+            initial={{ opacity:0.0,scale:0.4,}}
+            animate={
+              {
+         
+                opacity:1.0,scale:1,
+              }
+            }
+            transition={{
+              duration:1
+            }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      />
       </header>
       <div className=" pt-5 ">
         <a
-          href="#" className="w-full h-5 bg-red-600   px-4 font-bold  backdrop-blur[800px] text-gray-200 ">  {title}
+          href="#" className="w-full h-5   px-4 font-bold  backdrop-blur[800px] text-gray-950 ">  {title}
         </a>
-        <p className="mb-6  text-justify p-4 py-6 !text-gray-300">
+        <p className="mb-6  text-justify p-4 py-6 !text-gray-800">
           {desc}
         </p>
        

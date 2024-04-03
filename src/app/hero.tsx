@@ -1,13 +1,13 @@
 "use client";
 import { motion } from 'framer-motion';
-// import Image from "next/image";
+import Image from "next/image";
 
 
 function Hero() {
   return (
-    <div className="  bg-cover -z-20 bg-[url('/images/herobackground.jpg')] ">
-    <nav className=" bg-center example    flex items-center justify-center lg:pt-0' ">
-     <div className="container  px-16   mx-auto grid py-36 gap-10  w-full grid-cols-1 items-center lg:grid-cols-2">
+    <div className="  bg-cover -z-20  ">
+    <nav className=" bg-center example  bg-slate-50   flex items-center justify-center lg:pt-0' ">
+     <div className="container  px-16   mx-auto grid  py-28 gap-10  w-full grid-cols-1 items-center lg:grid-cols-2">
         <motion.div 
         initial={{ opacity: 0,x:-150 }}
         animate={{opacity: 1, x:0 }} 
@@ -17,24 +17,28 @@ function Hero() {
         >
         
         <div className="row-start-2 z-10 lg:row-auto">
+        
           <p 
-            className=" bg-gradient-to-br    from-blue-500 to-blue-300 text-transparent bg-clip-text mb-4 lg:text-5xl  text-gray-100 !leading-tight text-3xl"
+            className=" bg-gradient-to-br md:m-auto md:flex justify-between  bg-clip-text mb-2 lg:text-5xl  !leading-tight text-3xl font-extrabold"
           >
-          Hay I&apos;m  Web  and  <br /> Mobile App Developer!
+           Website And Mobile App Developer
           </p>
-          <p className="mb-4 tracking-wider py-10 space-y-11 font-serif wo mx-8 !text-gray-200 md:pr-16 xl:pr-28"
+
+          <div className=' h-1 w-28 my-4 bg-black rounded-sm'></div>
+          <p className="mb-2 tracking-widest leading-7  py-10  text-base"
           >
-            i&apos;m kasahun ybeltal, a passionate web and mobile app developer based in Ethiopia.
+            I&apos;m kasahun ybeltal, a passionate web and mobile app developer based in Ethiopia.
              Here,
             you&apos;ll get a glimpse of my journey in the world of web
             development, where creativity meets functionality.
           </p>
+           
             <motion.button 
             whileHover={{
               scale:"1.01"
             }}
            
-            className="bg-gradient-to-r  from-blue-500  to-blue-400 mx-10  py-3 px-12 rounded-full  text-white ">
+            className="bg-gradient-to-r bg-black text-white  hover:bg-white hover:text-black hover:border-black border px-8   py-3  rounded   ">
                   Download Cv
                 </motion.button>
         

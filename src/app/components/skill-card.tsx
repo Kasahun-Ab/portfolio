@@ -1,6 +1,8 @@
 
-import { motion, useScroll } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
+
+import { useScrollAnimation } from '../smothAnimation/smoothanimation';
+
 
 interface SkillCardProps {
   title: string;
@@ -9,25 +11,18 @@ interface SkillCardProps {
 }
 
 export function SkillCard({ icon: Icon, title, children }: SkillCardProps) {
-  const ref=useRef<HTMLElement>(null);
-  const {scrollYProgress} =useScroll({
-    target:ref,
-    offset:["0.4 1", "1 1"]
+  const shouldAnimate: boolean = useScrollAnimation(530); 
   
-  }); 
   return (
 
 
     <div >
       <motion.section 
-      ref={ref}
-
+     
+     animate={{ opacity: shouldAnimate ? 1 : 0, y: shouldAnimate ? 0 : 20 }}
+     transition={{ duration: 0.5 }}
   
-       style={{
-        opacity: scrollYProgress,
-        scale: scrollYProgress,
-        transition: 'opacity 0.2s ease-in-out, transform 0.2s ease-in-out',
-       }}
+     
       
       className='  rounded-xl'
       >

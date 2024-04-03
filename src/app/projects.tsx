@@ -1,6 +1,7 @@
 "use client";
 import ProjectCard from "./components/project-card";
-
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from "./smothAnimation/smoothanimation";
 const PROJECTS = [
   {
     img: "/images/project/mobileproject.jpg",
@@ -45,15 +46,24 @@ const PROJECTS = [
 ];
 
 export function Projects() {
+  window.addEventListener('scroll', () => {
+    const yOffset = window.scrollY;
+    console.log('Scrolling Y offset:', yOffset);
+  });
+  const shouldAnimate: boolean = useScrollAnimation(1200); 
   return (
-    <section className="py-16  ">
+<motion.div 
+animate={{ opacity: shouldAnimate ? 1 : 0, y: shouldAnimate ? 0 : 20 }}
+transition={{ duration: 0.5 }}
+>
+    <section className="py-28 ">
       <div className="container  px-16 mx-auto mb-20 text-center">
-        <h2   className="mb-4 font-serif uppercase font-bold text-gray-300 text-2xl">
+        <h2   className="mb-4 font-serif uppercase font-bold py-8 text-4xl text-black">
           My Projects
         </h2>
         <p
       
-          className="mx-auto w-full px-4  font-sans !text-gray-300 lg:w-6/12"
+          className="mx-auto w-full px-4 text-base  text-black lg:w-6/12"
         >
           Whether you have a mobile app idea that needs to come to life or a
           website that requires a facelift, I&apos;m here to turn your digital
@@ -66,6 +76,7 @@ export function Projects() {
         ))}
       </div>
     </section>
+    </motion.div>
   );
 }
 

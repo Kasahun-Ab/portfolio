@@ -25,13 +25,16 @@ const RESUME_ITEMS = [
 
 export function Resume() {
   return (
-    <section className=" py-36">
-      <div className="container px-16 mx-auto grid w-full grid-cols-1 items-center gap-16 lg:grid-cols-2">
-        <div className="col-span-1">
-          <h2  className=" text-gray-400">
+    <section className="flex py-28 flex-col justify-between items-center">
+
+      <h2  className=" text-black py-7 text-4xl font-poppins">
             My Resume
           </h2>
-          <p className="mb-4 mt-3 w-9/12 font-normal !text-gray-400">
+      <div className="container px-16 mx-auto grid w-full grid-cols-1 items-center gap-16 lg:grid-cols-2">
+        
+        <div className="col-span-1">
+          
+          <p className="mb-4 mt-3 w-9/12 font-normal !text-gray-900">
             Highly skilled and creative Web Developer with 5+ years of
             experience in crafting visually stunning and functionally robust
             websites and web applications.
