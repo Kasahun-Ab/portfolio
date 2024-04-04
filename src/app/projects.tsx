@@ -46,10 +46,7 @@ const PROJECTS = [
 ];
 
 export function Projects() {
-  window.addEventListener('scroll', () => {
-    const yOffset = window.scrollY;
-    console.log('Scrolling Y offset:', yOffset);
-  });
+ 
   const shouldAnimate: boolean = useScrollAnimation(1200); 
   return (
 <motion.div 
